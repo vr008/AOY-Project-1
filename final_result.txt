@@ -3,16 +3,16 @@ Graph Algorithms Experiment Results
 
 1. INTRODUCTION
 
-This project implements three graph algorithms in C++: connected
-components using DFS, cycle detection using DFS, and shortest paths
-using Dijkstra's algorithm.
+In this project, I implemented and tested three graph algorithms in C++.
+I used DFS for finding connected components and detecting cycles, and I
+used Dijkstra's algorithm for finding shortest paths.
 
-The graph type selected for this assignment is UNDIRECTED.
+For this assignment, I used an UNDIRECTED graph.
 
 2. SIMULATED TESTING
 
-Four graph types were tested: cycle, complete, empty, and heap.
-Each type was tested with different numbers of vertices.
+I tested four different types of graphs: cycle, complete, empty, and heap.
+I also tested different numbers of vertices for each graph type.
 
 FINAL SIMULATED RESULTS
 -----------------------
@@ -128,9 +128,10 @@ Peak memory: 5428 KB
 
 3. SIMULATION OBSERVATIONS
 
-The complete graphs use more memory because they have many more edges.
-The empty graphs use very little memory. The cycle graph shows a large
-increase in shortest-path time as the number of vertices increases.
+From the tests, I noticed that the complete graphs used the most memory
+because they have a lot more edges. The empty graphs used very little
+memory. I also noticed that the shortest-path time increased a lot as the
+number of vertices increased, especially for the larger cycle graphs.
 
 4. REAL-WORLD BONUS
 
@@ -140,9 +141,9 @@ Source: Stanford Network Analysis Project (SNAP)
 Dataset page:
 https://snap.stanford.edu/data/roadNet-PA.html
 
-The main graph uses UNDIRECTED adjacency. The dataset contains both
-directions of each road, so the program keeps only u < v for the main
-undirected representation.
+For the main test, I used the graph as an UNDIRECTED graph. The dataset
+contains both directions of each road, so the program keeps only one copy
+of each edge by using u < v.
 
 Official dataset vertices: 1088092
 Internal vertex array size: 1090920
@@ -165,21 +166,21 @@ Shortest paths time: 7240154 microseconds
 
 5. ADJACENCY CRITERIA BONUS
 
-Three adjacency criteria were actually tested.
+I also tested three different ways of building the adjacency information.
 
 Criterion 1 - Undirected adjacency:
-Keep only u < v.
+I kept only u < v.
 Tested with connectedComponents().
 Time: 556915 microseconds.
 
 Criterion 2 - Original input adjacency:
-Keep every input pair exactly as it appears.
+I kept every input pair exactly as it appears in the file.
 Tested with oneCycle().
 Cycle found: Yes, 4 vertices.
 Time: 730824 microseconds.
 
 Criterion 3 - Reverse adjacency:
-Reverse each input pair.
+I reversed each input pair.
 Tested with shortestPaths().
 Reachable vertices: 1087562.
 Total path vertices stored: 311821786.
@@ -194,20 +195,19 @@ Total elapsed time: 20.10 seconds
 
 7. REAL-WORLD OBSERVATIONS
 
-The real-world graph is much larger than the simulated graphs, so it
-requires much more memory. The shortest-path function uses the most
+The real-world graph is much bigger than the simulated graphs, so it
+needed much more memory. The shortest-path function also used a lot of
 memory because it stores a complete path for every reachable vertex.
 
-Cycle detection uses an explicit DFS stack instead of recursive DFS.
-This makes the implementation safer for a graph with more than one
-million vertices.
+For the large graph, I used an explicit DFS stack for cycle detection
+instead of recursive DFS. This makes it safer to run on a graph with more
+than one million vertices.
 
 8. CONCLUSION
 
-The required graph algorithms were implemented and tested on four
-different simulated graph types. The real-world bonus graph also
-completed successfully, and all three adjacency criteria were actually
-tested.
+Overall, I implemented the three required graph algorithms and tested them
+on four different graph types. I also tested the RoadNet-PA graph for the
+bonus part. In addition, I tested all three adjacency criteria.
 
 9. HOW TO RUN
 
@@ -219,7 +219,7 @@ chmod +x run_all_tests.sh
 ./run_all_tests.sh
 
 This script compiles the C++ files and runs the cycle, complete, empty,
-and heap graph experiments. The results are saved in results.txt.
+and heap graph tests. The results are saved in results.txt.
 
 To run the real-world bonus test:
 
@@ -227,7 +227,7 @@ chmod +x run_realgraph_make.sh
 ./run_realgraph_make.sh
 
 This script compiles realgraph_make.cpp, loads roadNet-PA.txt, runs the
-real-world graph tests, and saves the results in real_results.txt.
+real-world tests, and saves the results in real_results.txt.
 
 The main simulated program can also be run manually:
 
