@@ -1,0 +1,219 @@
+Graph Algorithms Experiment Results
+===================================
+
+
+--------------------------------
+Cycle 1000
+Vertices: 1000
+Edges: 1000
+Number of components: 1
+Connected components time: 403 microseconds
+Cycle detection time: 473 microseconds
+Shortest paths time: 5635 microseconds
+Peak memory:
+	Maximum resident set size (kbytes): 5248
+User time:
+	User time (seconds): 0.00
+System time:
+	System time (seconds): 0.00
+Elapsed time:
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.00
+
+
+--------------------------------
+Cycle 5000
+Vertices: 5000
+Edges: 5000
+Number of components: 1
+Connected components time: 1791 microseconds
+Cycle detection time: 1960 microseconds
+Shortest paths time: 87096 microseconds
+Peak memory:
+	Maximum resident set size (kbytes): 38272
+User time:
+	User time (seconds): 0.08
+System time:
+	System time (seconds): 0.01
+Elapsed time:
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.09
+
+
+--------------------------------
+Cycle 10000
+Vertices: 10000
+Edges: 10000
+Number of components: 1
+Connected components time: 4440 microseconds
+Cycle detection time: 5348 microseconds
+Shortest paths time: 340363 microseconds
+Peak memory:
+	Maximum resident set size (kbytes): 128220
+User time:
+	User time (seconds): 0.31
+System time:
+	System time (seconds): 0.05
+Elapsed time:
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.36
+
+
+--------------------------------
+Complete 100
+Vertices: 100
+Edges: 4950
+Number of components: 1
+Connected components time: 412 microseconds
+Cycle detection time: 299 microseconds
+Shortest paths time: 867 microseconds
+Peak memory:
+	Maximum resident set size (kbytes): 4224
+User time:
+	User time (seconds): 0.00
+System time:
+	System time (seconds): 0.00
+Elapsed time:
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.00
+
+
+--------------------------------
+Complete 500
+Vertices: 500
+Edges: 124750
+Number of components: 1
+Connected components time: 8488 microseconds
+Cycle detection time: 4931 microseconds
+Shortest paths time: 18630 microseconds
+Peak memory:
+	Maximum resident set size (kbytes): 12360
+User time:
+	User time (seconds): 0.05
+System time:
+	System time (seconds): 0.00
+Elapsed time:
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.06
+
+
+--------------------------------
+Complete 1000
+Vertices: 1000
+Edges: 499500
+Number of components: 1
+Connected components time: 32796 microseconds
+Cycle detection time: 20322 microseconds
+Shortest paths time: 62321 microseconds
+Peak memory:
+	Maximum resident set size (kbytes): 38856
+User time:
+	User time (seconds): 0.22
+System time:
+	System time (seconds): 0.02
+Elapsed time:
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.25
+
+
+--------------------------------
+Empty 1000
+Vertices: 1000
+Edges: 0
+Number of components: 1000
+Connected components time: 829 microseconds
+Cycle detection time: 98 microseconds
+Shortest paths time: 49 microseconds
+Peak memory:
+	Maximum resident set size (kbytes): 3968
+User time:
+	User time (seconds): 0.00
+System time:
+	System time (seconds): 0.00
+Elapsed time:
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.00
+
+
+--------------------------------
+Empty 5000
+Vertices: 5000
+Edges: 0
+Number of components: 5000
+Connected components time: 4106 microseconds
+Cycle detection time: 468 microseconds
+Shortest paths time: 216 microseconds
+Peak memory:
+	Maximum resident set size (kbytes): 4352
+User time:
+	User time (seconds): 0.00
+System time:
+	System time (seconds): 0.00
+Elapsed time:
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.00
+
+
+--------------------------------
+Empty 10000
+Vertices: 10000
+Edges: 0
+Number of components: 10000
+Connected components time: 8873 microseconds
+Cycle detection time: 1062 microseconds
+Shortest paths time: 466 microseconds
+Peak memory:
+	Maximum resident set size (kbytes): 4412
+User time:
+	User time (seconds): 0.01
+System time:
+	System time (seconds): 0.00
+Elapsed time:
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.01
+
+
+--------------------------------
+Heap 1000
+Vertices: 1000
+Edges: 999
+Number of components: 1
+Connected components time: 467 microseconds
+Cycle detection time: 409 microseconds
+Shortest paths time: 1798 microseconds
+Peak memory:
+	Maximum resident set size (kbytes): 3840
+User time:
+	User time (seconds): 0.00
+System time:
+	System time (seconds): 0.00
+Elapsed time:
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.00
+
+
+--------------------------------
+Heap 5000
+Vertices: 5000
+Edges: 4999
+Number of components: 1
+Connected components time: 2216 microseconds
+Cycle detection time: 1834 microseconds
+Shortest paths time: 8062 microseconds
+Peak memory:
+	Maximum resident set size (kbytes): 4480
+User time:
+	User time (seconds): 0.01
+System time:
+	System time (seconds): 0.00
+Elapsed time:
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.01
+
+
+--------------------------------
+Heap 10000
+Vertices: 10000
+Edges: 9999
+Number of components: 1
+Connected components time: 4582 microseconds
+Cycle detection time: 4693 microseconds
+Shortest paths time: 19340 microseconds
+Peak memory:
+	Maximum resident set size (kbytes): 5428
+User time:
+	User time (seconds): 0.03
+System time:
+	System time (seconds): 0.00
+Elapsed time:
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.03
+

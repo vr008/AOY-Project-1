@@ -1,0 +1,242 @@
+Graph Algorithms Experiment Results
+===================================
+
+1. INTRODUCTION
+
+This project implements three graph algorithms in C++: connected
+components using DFS, cycle detection using DFS, and shortest paths
+using Dijkstra's algorithm.
+
+The graph type selected for this assignment is UNDIRECTED.
+
+2. SIMULATED TESTING
+
+Four graph types were tested: cycle, complete, empty, and heap.
+Each type was tested with different numbers of vertices.
+
+FINAL SIMULATED RESULTS
+-----------------------
+
+Cycle 1000
+Vertices: 1000
+Edges: 1000
+Connected components: 1
+Connected components time: 403 microseconds
+Cycle detection time: 473 microseconds
+Shortest paths time: 5635 microseconds
+Peak memory: 5248 KB
+
+Cycle 5000
+Vertices: 5000
+Edges: 5000
+Connected components: 1
+Connected components time: 1791 microseconds
+Cycle detection time: 1960 microseconds
+Shortest paths time: 87096 microseconds
+Peak memory: 38272 KB
+
+Cycle 10000
+Vertices: 10000
+Edges: 10000
+Connected components: 1
+Connected components time: 4440 microseconds
+Cycle detection time: 5348 microseconds
+Shortest paths time: 340363 microseconds
+Peak memory: 128220 KB
+
+Complete 100
+Vertices: 100
+Edges: 4950
+Connected components: 1
+Connected components time: 412 microseconds
+Cycle detection time: 299 microseconds
+Shortest paths time: 867 microseconds
+Peak memory: 4224 KB
+
+Complete 500
+Vertices: 500
+Edges: 124750
+Connected components: 1
+Connected components time: 8488 microseconds
+Cycle detection time: 4931 microseconds
+Shortest paths time: 18630 microseconds
+Peak memory: 12360 KB
+
+Complete 1000
+Vertices: 1000
+Edges: 499500
+Connected components: 1
+Connected components time: 32796 microseconds
+Cycle detection time: 20322 microseconds
+Shortest paths time: 62321 microseconds
+Peak memory: 38856 KB
+
+Empty 1000
+Vertices: 1000
+Edges: 0
+Connected components: 1000
+Connected components time: 829 microseconds
+Cycle detection time: 98 microseconds
+Shortest paths time: 49 microseconds
+Peak memory: 3968 KB
+
+Empty 5000
+Vertices: 5000
+Edges: 0
+Connected components: 5000
+Connected components time: 4106 microseconds
+Cycle detection time: 468 microseconds
+Shortest paths time: 216 microseconds
+Peak memory: 4352 KB
+
+Empty 10000
+Vertices: 10000
+Edges: 0
+Connected components: 10000
+Connected components time: 8873 microseconds
+Cycle detection time: 1062 microseconds
+Shortest paths time: 466 microseconds
+Peak memory: 4412 KB
+
+Heap 1000
+Vertices: 1000
+Edges: 999
+Connected components: 1
+Connected components time: 467 microseconds
+Cycle detection time: 409 microseconds
+Shortest paths time: 1798 microseconds
+Peak memory: 3840 KB
+
+Heap 5000
+Vertices: 5000
+Edges: 4999
+Connected components: 1
+Connected components time: 2216 microseconds
+Cycle detection time: 1834 microseconds
+Shortest paths time: 8062 microseconds
+Peak memory: 4480 KB
+
+Heap 10000
+Vertices: 10000
+Edges: 9999
+Connected components: 1
+Connected components time: 4582 microseconds
+Cycle detection time: 4693 microseconds
+Shortest paths time: 19340 microseconds
+Peak memory: 5428 KB
+
+
+3. SIMULATION OBSERVATIONS
+
+The complete graphs use more memory because they have many more edges.
+The empty graphs use very little memory. The cycle graph shows a large
+increase in shortest-path time as the number of vertices increases.
+
+4. REAL-WORLD BONUS
+
+Dataset: roadNet-PA.txt
+Graph: Pennsylvania road network
+Source: Stanford Network Analysis Project (SNAP)
+Dataset page:
+https://snap.stanford.edu/data/roadNet-PA.html
+
+The main graph uses UNDIRECTED adjacency. The dataset contains both
+directions of each road, so the program keeps only u < v for the main
+undirected representation.
+
+Official dataset vertices: 1088092
+Internal vertex array size: 1090920
+Undirected edges: 1541898
+
+MAIN ASSIGNMENT RESULTS
+-----------------------
+
+Connected components: 3034
+Connected components time: 556915 microseconds
+
+Cycle found: Yes
+Cycle size: 4 vertices
+Cycle detection time: 484412 microseconds
+
+Source: 0
+Reachable vertices: 1087562
+Total path vertices stored: 311821786
+Shortest paths time: 7240154 microseconds
+
+5. ADJACENCY CRITERIA BONUS
+
+Three adjacency criteria were actually tested.
+
+Criterion 1 - Undirected adjacency:
+Keep only u < v.
+Tested with connectedComponents().
+Time: 556915 microseconds.
+
+Criterion 2 - Original input adjacency:
+Keep every input pair exactly as it appears.
+Tested with oneCycle().
+Cycle found: Yes, 4 vertices.
+Time: 730824 microseconds.
+
+Criterion 3 - Reverse adjacency:
+Reverse each input pair.
+Tested with shortestPaths().
+Reachable vertices: 1087562.
+Total path vertices stored: 311821786.
+Time: 7578200 microseconds.
+
+6. REAL-WORLD PROCESS MEASUREMENTS
+
+Peak memory: 3959552 KB
+User CPU time: 18.26 seconds
+System CPU time: 1.83 seconds
+Total elapsed time: 20.10 seconds
+
+7. REAL-WORLD OBSERVATIONS
+
+The real-world graph is much larger than the simulated graphs, so it
+requires much more memory. The shortest-path function uses the most
+memory because it stores a complete path for every reachable vertex.
+
+Cycle detection uses an explicit DFS stack instead of recursive DFS.
+This makes the implementation safer for a graph with more than one
+million vertices.
+
+8. CONCLUSION
+
+The required graph algorithms were implemented and tested on four
+different simulated graph types. The real-world bonus graph also
+completed successfully, and all three adjacency criteria were actually
+tested.
+
+9. HOW TO RUN
+
+The project was tested on Linux using g++.
+
+To run all simulated graph tests:
+
+chmod +x run_all_tests.sh
+./run_all_tests.sh
+
+This script compiles the C++ files and runs the cycle, complete, empty,
+and heap graph experiments. The results are saved in results.txt.
+
+To run the real-world bonus test:
+
+chmod +x run_realgraph_make.sh
+./run_realgraph_make.sh
+
+This script compiles realgraph_make.cpp, loads roadNet-PA.txt, runs the
+real-world graph tests, and saves the results in real_results.txt.
+
+The main simulated program can also be run manually:
+
+g++ -std=c++17 graph_operations.cpp graph_simulator.cpp simulated_test.cpp -o graph_test
+
+./graph_test cycle 1000
+./graph_test complete 1000
+./graph_test empty 1000
+./graph_test heap 1000
+
+For the real-world graph, roadNet-PA.txt must be in the same folder as
+realgraph_make.cpp and run_realgraph_make.sh.

@@ -1,0 +1,36 @@
+REAL-LIFE GRAPH BONUS RESULTS
+==============================
+
+Dataset: roadNet-PA.txt
+Graph: Pennsylvania road network
+
+Official dataset vertices: 1088092
+Internal vertex array size: 1090920
+Undirected edges: 1541898
+
+Main assignment graph:
+Adjacency criterion: Criterion 1 - UNDIRECTED
+
+Connected components:
+Time was measured during the run above.
+
+Cycle detection:
+Time: 484412 microseconds
+
+Shortest paths:
+Source: 0
+Reachable vertices: 1087562
+Total path vertices stored: 311821786
+Time: 7240154 microseconds
+
+Adjacency criteria tested:
+Criterion 1 - Undirected adjacency: connectedComponents()
+Criterion 2 - Original input adjacency: oneCycle()
+Criterion 3 - Reverse adjacency: shortestPaths()
+
+PROCESS-LEVEL MEASUREMENTS
+===========================
+	Maximum resident set size (kbytes): 3959552
+	User time (seconds): 18.26
+	System time (seconds): 1.83
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:20.10
