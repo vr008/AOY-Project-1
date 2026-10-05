@@ -1,5 +1,4 @@
-Graph Algorithms Experiment Results
-===================================
+# Graph Algorithms Experiment Results
 
 1. INTRODUCTION
 
@@ -9,13 +8,34 @@ used Dijkstra's algorithm for finding shortest paths.
 
 For this assignment, I used an UNDIRECTED graph.
 
-2. SIMULATED TESTING
+2. DATA STRUCTURES USED
+
+The graph is stored using C++ vectors.
+
+For the adjacency list, I use a vector of vectors, where each vertex
+stores a list of its neighboring vertices. This is used by the DFS
+algorithms for connected components and cycle detection.
+
+For Dijkstra's algorithm, I use a vector of pairs to store each neighbor
+and its edge weight. I also use a priority_queue to select the next
+vertex with the smallest distance.
+
+For DFS, I use a stack and a visited vector. The visited vector keeps
+track of which vertices have already been processed.
+
+For shortest paths, I use a distance vector and a parent vector. After
+Dijkstra's algorithm finishes, the parent information is used to
+reconstruct the path from the source to each reachable vertex.
+
+The final shortest paths are stored in a vector of vectors, with one path
+for each reachable vertex.
+
+3. SIMULATED TESTING
 
 I tested four different types of graphs: cycle, complete, empty, and heap.
 I also tested different numbers of vertices for each graph type.
 
-FINAL SIMULATED RESULTS
------------------------
+## FINAL SIMULATED RESULTS
 
 Cycle 1000
 Vertices: 1000
@@ -25,6 +45,9 @@ Connected components time: 403 microseconds
 Cycle detection time: 473 microseconds
 Shortest paths time: 5635 microseconds
 Peak memory: 5248 KB
+User CPU time: 0 seconds
+System CPU time: 0 seconds
+Elapsed time: 0:00.00
 
 Cycle 5000
 Vertices: 5000
@@ -34,6 +57,9 @@ Connected components time: 1791 microseconds
 Cycle detection time: 1960 microseconds
 Shortest paths time: 87096 microseconds
 Peak memory: 38272 KB
+User CPU time: 0.08 seconds
+System CPU time: 0.01 seconds
+Elapsed time: 0:00.09
 
 Cycle 10000
 Vertices: 10000
@@ -43,6 +69,9 @@ Connected components time: 4440 microseconds
 Cycle detection time: 5348 microseconds
 Shortest paths time: 340363 microseconds
 Peak memory: 128220 KB
+User CPU time: 0.31 seconds
+System CPU time: 0.05 seconds
+Elapsed time: 0:00.36
 
 Complete 100
 Vertices: 100
@@ -52,6 +81,9 @@ Connected components time: 412 microseconds
 Cycle detection time: 299 microseconds
 Shortest paths time: 867 microseconds
 Peak memory: 4224 KB
+User CPU time: 0 seconds
+System CPU time: 0 seconds
+Elapsed time: 0:00.00
 
 Complete 500
 Vertices: 500
@@ -61,6 +93,9 @@ Connected components time: 8488 microseconds
 Cycle detection time: 4931 microseconds
 Shortest paths time: 18630 microseconds
 Peak memory: 12360 KB
+User CPU time: 0.05 seconds
+System CPU time: 0 seconds
+Elapsed time: 0:00.06
 
 Complete 1000
 Vertices: 1000
@@ -70,6 +105,9 @@ Connected components time: 32796 microseconds
 Cycle detection time: 20322 microseconds
 Shortest paths time: 62321 microseconds
 Peak memory: 38856 KB
+User CPU time: 0.22 seconds
+System CPU time: 0.02 seconds
+Elapsed time: 0:00.25
 
 Empty 1000
 Vertices: 1000
@@ -79,6 +117,9 @@ Connected components time: 829 microseconds
 Cycle detection time: 98 microseconds
 Shortest paths time: 49 microseconds
 Peak memory: 3968 KB
+User CPU time: 0 seconds
+System CPU time: 0 seconds
+Elapsed time: 0:00.00
 
 Empty 5000
 Vertices: 5000
@@ -88,6 +129,9 @@ Connected components time: 4106 microseconds
 Cycle detection time: 468 microseconds
 Shortest paths time: 216 microseconds
 Peak memory: 4352 KB
+User CPU time: 0 seconds
+System CPU time: 0 seconds
+Elapsed time: 0:00.00
 
 Empty 10000
 Vertices: 10000
@@ -97,6 +141,9 @@ Connected components time: 8873 microseconds
 Cycle detection time: 1062 microseconds
 Shortest paths time: 466 microseconds
 Peak memory: 4412 KB
+User CPU time: 0.01 seconds
+System CPU time: 0 seconds
+Elapsed time: 0:00.01
 
 Heap 1000
 Vertices: 1000
@@ -106,6 +153,9 @@ Connected components time: 467 microseconds
 Cycle detection time: 409 microseconds
 Shortest paths time: 1798 microseconds
 Peak memory: 3840 KB
+User CPU time: 0 seconds
+System CPU time: 0 seconds
+Elapsed time: 0:00.00
 
 Heap 5000
 Vertices: 5000
@@ -115,6 +165,9 @@ Connected components time: 2216 microseconds
 Cycle detection time: 1834 microseconds
 Shortest paths time: 8062 microseconds
 Peak memory: 4480 KB
+User CPU time: 0.01 seconds
+System CPU time: 0 seconds
+Elapsed time: 0:00.01
 
 Heap 10000
 Vertices: 10000
@@ -124,16 +177,22 @@ Connected components time: 4582 microseconds
 Cycle detection time: 4693 microseconds
 Shortest paths time: 19340 microseconds
 Peak memory: 5428 KB
+User CPU time: 0.03 seconds
+System CPU time: 0 seconds
+Elapsed time: 0:00.03
 
-
-3. SIMULATION OBSERVATIONS
+4. SIMULATION OBSERVATIONS
 
 From the tests, I noticed that the complete graphs used the most memory
 because they have a lot more edges. The empty graphs used very little
 memory. I also noticed that the shortest-path time increased a lot as the
 number of vertices increased, especially for the larger cycle graphs.
 
-4. REAL-WORLD BONUS
+The complete graphs also took more time as the number of edges increased.
+The heap graphs stayed relatively small in memory because they only have
+n - 1 edges.
+
+5. REAL-WORLD BONUS
 
 Dataset: roadNet-PA.txt
 Graph: Pennsylvania road network
@@ -149,8 +208,7 @@ Official dataset vertices: 1088092
 Internal vertex array size: 1090920
 Undirected edges: 1541898
 
-MAIN ASSIGNMENT RESULTS
------------------------
+## MAIN ASSIGNMENT RESULTS
 
 Connected components: 3034
 Connected components time: 556915 microseconds
@@ -164,7 +222,7 @@ Reachable vertices: 1087562
 Total path vertices stored: 311821786
 Shortest paths time: 7240154 microseconds
 
-5. ADJACENCY CRITERIA BONUS
+6. ADJACENCY CRITERIA BONUS
 
 I also tested three different ways of building the adjacency information.
 
@@ -186,14 +244,14 @@ Reachable vertices: 1087562.
 Total path vertices stored: 311821786.
 Time: 7578200 microseconds.
 
-6. REAL-WORLD PROCESS MEASUREMENTS
+7. REAL-WORLD PROCESS MEASUREMENTS
 
 Peak memory: 3959552 KB
 User CPU time: 18.26 seconds
 System CPU time: 1.83 seconds
 Total elapsed time: 20.10 seconds
 
-7. REAL-WORLD OBSERVATIONS
+8. REAL-WORLD OBSERVATIONS
 
 The real-world graph is much bigger than the simulated graphs, so it
 needed much more memory. The shortest-path function also used a lot of
@@ -203,13 +261,20 @@ For the large graph, I used an explicit DFS stack for cycle detection
 instead of recursive DFS. This makes it safer to run on a graph with more
 than one million vertices.
 
-8. CONCLUSION
+The RoadNet-PA graph also showed that the number of edges has a large
+effect on memory usage. Even though the graph has about 1.1 million
+vertices, it has over 1.5 million undirected edges.
+
+9. CONCLUSION
 
 Overall, I implemented the three required graph algorithms and tested them
 on four different graph types. I also tested the RoadNet-PA graph for the
 bonus part. In addition, I tested all three adjacency criteria.
 
-9. HOW TO RUN
+The experiments showed that graph size and especially the number of edges
+have a noticeable effect on runtime and memory usage.
+
+10. HOW TO RUN
 
 The project was tested on Linux using g++.
 
